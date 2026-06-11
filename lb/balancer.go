@@ -32,7 +32,8 @@ import (
 )
 
 type balancer struct {
-	// connections[i] representa a quantide de conexões no servidor serversURL[i]
+	// connections[i] representa a quantide de
+	// conexões atuais no servidor serversURL[i]
 	serversURL []string
 	connections []int
 }
@@ -66,7 +67,8 @@ func (bal balancer) GetBestServer() int {
 	a função que lida com a proxy entre cliente e servidor termina.
 
 	assim, não há risco do decremento ocorrer mais de uma vez, ou
-	por outra parte do cógido que não foi responsável pelo incremento.
+	ser ser feito por outra parte do cógido que não foi responsável
+	pelo incremento.
 */
 func (bal balancer) UseServer(serverIndex int, usageCallback func(serverURL string)) (error) {
 	// verifica se o servidor é válido
